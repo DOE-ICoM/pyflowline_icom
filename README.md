@@ -1,2 +1,7 @@
-# pystream_mpas
-The MPAS version of Pystream
+# Pyflowline
+The Pyflowline tool run on the MPAS mesh.
+
+
+# Installation
+pip install pyflowline
+
