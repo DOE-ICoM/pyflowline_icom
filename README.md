@@ -32,12 +32,17 @@ The follow steps are recommended:
 2. Activate the newly crated conda environment
     conda activate pyflowline
 3. Install dependency packages using conda
-    conda install -c conda-forge numpy gdal netCDF4 shapely
+    conda install -c conda-forge numpy
+    conda install -c conda-forge shapely
+    conda install -c conda-forge netCDF4
+    conda install -c conda-forge gdal
 4. Install PyFlowline
     pip install pyflowline
-5. Install and setup the Python Jupter Notebook
+5. Install and setup the Python Jupyter Notebook
 6. Install the visualization Package
-    conda install -c conda-forge matplotlib cartopy geopandas 
+    conda install -c conda-forge matplotlib   
+    conda install -c conda-forge cartopy 
+    conda install -c conda-forge geopandas 
 7. Clone this repository and set this environment as the workspace environment
 8. Navigate to the notebook and run it in your preferred Python IDE.
 

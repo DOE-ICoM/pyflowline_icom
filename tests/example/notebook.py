@@ -41,7 +41,7 @@ iFlag_option = 2
 if iFlag_option ==1:
 
     sPath = str(Path(__file__).parent.resolve())
-    sFilename_configuration_in = sPath +  '/../tests/configurations/template.json' 
+    sFilename_configuration_in = sPath +  '/../configurations/pyflowline_susquehanna_mpas.json' 
     
     oPyflowline = pyflowline_generate_template_configuration_json_file(sFilename_configuration_in)
     print(oPyflowline.tojson())
@@ -55,15 +55,15 @@ else:
   
         sPath = str(Path(__file__).parent.resolve())
         if sMesh_type=='hexagon':
-            sFilename_configuration_in = sPath +  '/../tests/configurations/pyflowline_susquehanna_hexagon.json' 
+            sFilename_configuration_in = sPath +  '/../configurations/pyflowline_susquehanna_hexagon.json' 
         else:
             if sMesh_type=='square':
-                sFilename_configuration_in = sPath +  '/../tests/configurations/pyflowline_susquehanna_square.json' 
+                sFilename_configuration_in = sPath +  '/../configurations/pyflowline_susquehanna_square.json' 
             else:
                 if sMesh_type=='latlon':
-                    sFilename_configuration_in = sPath +  '/../tests/configurations/pyflowline_susquehanna_latlon.json' 
+                    sFilename_configuration_in = sPath +  '/../configurations/pyflowline_susquehanna_latlon.json' 
                 else:
-                    sFilename_configuration_in = sPath +  '/../tests/configurations/pyflowline_susquehanna_mpas.json' 
+                    sFilename_configuration_in = sPath +  '/../configurations/pyflowline_susquehanna_mpas.json' 
         
         
         oPyflowline = pyflowline_read_model_configuration_file(sFilename_configuration_in, \
