@@ -37,7 +37,7 @@ The follow steps are recommended:
     pip install pyflowline
 5. Install and setup the Python Jupter Notebook
 6. Install the visualization Package
-    conda install -c conda-forge 
+    conda install -c conda-forge matplotlib cartopy geopandas 
 7. Clone this repository and set this environment as the workspace environment
 8. Navigate to the notebook and run it in your preferred Python IDE.
 
