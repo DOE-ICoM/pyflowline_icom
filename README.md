@@ -37,10 +37,13 @@ The follow steps are recommended:
 
 3. Install dependency packages using conda
 
-    conda install -c conda-forge numpy
-    conda install -c conda-forge shapely
-    conda install -c conda-forge netCDF4
-    conda install -c conda-forge gdal
+    * conda install -c conda-forge numpy
+
+    * conda install -c conda-forge shapely
+
+    * conda install -c conda-forge netCDF4
+
+    * conda install -c conda-forge gdal
 
 4. Install PyFlowline
 
@@ -51,6 +54,8 @@ The follow steps are recommended:
 6. Clone this repository and set this environment as the workspace environment
 
 7. Navigate to the notebook and run it in your preferred Python IDE.
+
+8. Visulize the results with QGIS
 
 
 
