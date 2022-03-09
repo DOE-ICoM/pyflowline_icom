@@ -48,8 +48,6 @@ The follow steps are recommended:
 
 5. Install and setup the Python Jupyter Notebook
 
-
-
 6. Clone this repository and set this environment as the workspace environment
 
 7. Navigate to the notebook and run it in your preferred Python IDE.
