@@ -40,15 +40,16 @@ else:
 
 sPath = str( Path().resolve() )
 iFlag_option = 1
-if iFlag_option ==1:
+sWorkspace_data = realpath( sPath +  '/data/susquehanna' )
+sWorkspace_input =  str(Path(sWorkspace_data)  /  'input')
+sWorkspace_output=  str(Path(sWorkspace_data)  /  'output')
 
+if iFlag_option ==1:    
+    sFilename_configuration_in = realpath( sPath +  '/test/configurations/template.json' )
     
-    sFilename_configuration_in = realpath( sPath +  '/../configurations/template.json' )
-    sPath_data = realpath( sPath +  '/../data/susquehanna' )
-    oPyflowline = pyflowline_generate_template_configuration_json_file(sFilename_configuration_in, sPath_data)
-    print(oPyflowline.tojson())
-    #now you can customize the model object
-    oPyflowline.iCase_index = 1
+    oPyflowline = pyflowline_generate_template_configuration_json_file(sFilename_configuration_in,\
+         sWorkspace_input, sWorkspace_output, sMesh_type_in=sMesh_type, iCase_index_in = iCase_index, sDate_in = sDate)
+    
     print(oPyflowline.tojson())
 else: 
     if iFlag_option == 2:
@@ -65,7 +66,7 @@ else:
                 if sMesh_type=='latlon':
                     sFilename_configuration_in = realpath( sPath +  '/../configurations/pyflowline_susquehanna_latlon.json' )
                 else:
-                    sFilename_configuration_in = realpath( sPath +  '/../configurations/)pyflowline_susquehanna_mpas.json' 
+                    sFilename_configuration_in = realpath( sPath +  '/../configurations/)pyflowline_susquehanna_mpas.json' )
         
         
         oPyflowline = pyflowline_read_model_configuration_file(sFilename_configuration_in, \
