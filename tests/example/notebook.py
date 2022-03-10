@@ -48,7 +48,7 @@ if iFlag_option ==1:
     sFilename_configuration_in = realpath( sPath +  '/tests/configurations/template.json' )
     
     oPyflowline = pyflowline_generate_template_configuration_json_file(sFilename_configuration_in,\
-         sWorkspace_input, sWorkspace_output, sMesh_type_in=sMesh_type, iCase_index_in = iCase_index, sDate_in = sDate)
+         sWorkspace_input, sWorkspace_output, iFlag_use_mesh_dem_in = 1,sMesh_type_in=sMesh_type, iCase_index_in = iCase_index, sDate_in = sDate)
     
     print(oPyflowline.tojson())
 else: 
@@ -80,7 +80,7 @@ oPyflowline.convert_flowline_to_json()
 oPyflowline.aBasin[0].dLatitude_outlet_degree=39.4620
 oPyflowline.aBasin[0].dLongitude_outlet_degree=-76.0093
 
-oPyflowline.flowline_simplification()
+#oPyflowline.flowline_simplification()
 
 oPyflowline.dLongitude_left= -79
 oPyflowline.dLongitude_right= -74.5
