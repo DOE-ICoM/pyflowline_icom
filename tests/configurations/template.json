@@ -13,11 +13,11 @@
     "iFlag_use_shapefile_extent": 0,
     "iMesh_type": 4,
     "nOutlet": 1,
-    "sCase": "pyflowline20220201010",
-    "sDate": "20220201",
+    "sCase": "pyflowline20220308010",
+    "sDate": "20220308",
     "sFilename_basins": "/Users/liao313/workspace/python/pyflowline_icom/tests/configurations/template_basins.json",
-    "sFilename_mesh": "/Users/liao313/workspace/python/pyflowline_icom/data/susquehanna/output/pyflowline20220201010/mpas.json",
-    "sFilename_mesh_info": "/Users/liao313/workspace/python/pyflowline_icom/data/susquehanna/output/pyflowline20220201010/mpas_mesh_info.json",
+    "sFilename_mesh": "/Users/liao313/workspace/python/pyflowline_icom/data/susquehanna/output/pyflowline20220308010/mpas.json",
+    "sFilename_mesh_info": "/Users/liao313/workspace/python/pyflowline_icom/data/susquehanna/output/pyflowline20220308010/mpas_mesh_info.json",
     "sFilename_mesh_netcdf": "/Users/liao313/workspace/python/pyflowline_icom/data/susquehanna/input/lnd_cull_mesh.nc",
     "sFilename_model_configuration": "/Users/liao313/workspace/python/pyflowline_icom/tests/configurations/template.json",
     "sFilename_spatial_reference": "/Users/liao313/workspace/python/pyflowline_icom/data/susquehanna/input/boundary_proj.shp",
@@ -26,5 +26,5 @@
     "sModel": "pyflowline",
     "sRegion": "susquehanna",
     "sWorkspace_input": "/Users/liao313/workspace/python/pyflowline_icom/data/susquehanna/input",
-    "sWorkspace_output": "/Users/liao313/workspace/python/pyflowline_icom/data/susquehanna/output/pyflowline20220201010"
+    "sWorkspace_output": "/Users/liao313/workspace/python/pyflowline_icom/data/susquehanna/output/pyflowline20220308010"
 }

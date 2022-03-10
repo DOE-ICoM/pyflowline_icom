@@ -26,7 +26,7 @@ if len(sys.argv) == 1:
     sMesh_type = 'mpas'
     iCase_index = 10
     dResolution_meter=5000
-    sDate='20220201'
+    sDate='20220308'
 else:
     if len(sys.argv)> 1:
         sMesh_type = pArgs.sMesh_type
