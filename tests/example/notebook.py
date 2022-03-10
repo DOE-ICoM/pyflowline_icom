@@ -80,7 +80,7 @@ oPyflowline.convert_flowline_to_json()
 oPyflowline.aBasin[0].dLatitude_outlet_degree=39.4620
 oPyflowline.aBasin[0].dLongitude_outlet_degree=-76.0093
 
-#oPyflowline.flowline_simplification()
+oPyflowline.flowline_simplification()
 
 oPyflowline.dLongitude_left= -79
 oPyflowline.dLongitude_right= -74.5
