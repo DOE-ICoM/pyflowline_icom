@@ -77,8 +77,15 @@ else:
 #the total number of basin is controlled by the nOutlet variable
 #convert the raw flowline into geojson in WGS84 system        
 oPyflowline.convert_flowline_to_json()
+oPyflowline.aBasin[0].dLatitude_outlet_degree=39.4620
+oPyflowline.aBasin[0].dLongitude_outlet_degree=-76.0093
 
 oPyflowline.flowline_simplification()
+
+oPyflowline.dLongitude_left= -79
+oPyflowline.dLongitude_right= -74.5
+oPyflowline.dLatitude_bot= 39.20
+oPyflowline.dLatitude_top= 42.8
 
 oPyflowline.mesh_generation()
 
