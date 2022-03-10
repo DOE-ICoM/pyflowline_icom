@@ -9,9 +9,6 @@ for handler in logging.root.handlers[:]:
 logging.basicConfig(format='%(asctime)s %(message)s')
 logging.warning('is the time Pyflowline simulation started.')
 
-import osgeo.ogr
-from osgeo import gdal
-
 from pyflowline.classes.pycase import flowlinecase
 from pyflowline.pyflowline_read_model_configuration_file import pyflowline_read_model_configuration_file
 from pyflowline.pyflowline_generate_template_configuration_json_file import pyflowline_generate_template_configuration_json_file
@@ -48,7 +45,7 @@ sWorkspace_input =  str(Path(sWorkspace_data)  /  'input')
 sWorkspace_output=  str(Path(sWorkspace_data)  /  'output')
 
 if iFlag_option ==1:    
-    sFilename_configuration_in = realpath( sPath +  '/test/configurations/template.json' )
+    sFilename_configuration_in = realpath( sPath +  '/tests/configurations/template.json' )
     
     oPyflowline = pyflowline_generate_template_configuration_json_file(sFilename_configuration_in,\
          sWorkspace_input, sWorkspace_output, sMesh_type_in=sMesh_type, iCase_index_in = iCase_index, sDate_in = sDate)
