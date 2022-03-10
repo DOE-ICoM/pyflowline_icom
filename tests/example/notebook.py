@@ -9,6 +9,9 @@ for handler in logging.root.handlers[:]:
 logging.basicConfig(format='%(asctime)s %(message)s')
 logging.warning('is the time Pyflowline simulation started.')
 
+import osgeo.ogr
+from osgeo import gdal
+
 from pyflowline.classes.pycase import flowlinecase
 from pyflowline.pyflowline_read_model_configuration_file import pyflowline_read_model_configuration_file
 from pyflowline.pyflowline_generate_template_configuration_json_file import pyflowline_generate_template_configuration_json_file
@@ -35,7 +38,7 @@ else:
         sDate = pArgs.sDate
         print(sMesh_type, iCase_index, dResolution_meter, sDate)
     else:
-        print(len(sys.argv), 'Missing arguaments')
+        print(len(sys.argv), 'Missing arguments')
         pass
 
 sPath = str( Path().resolve() )
