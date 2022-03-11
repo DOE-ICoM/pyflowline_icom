@@ -5,7 +5,7 @@
         "iFlag_dam": 1,
         "iStream_order": 3,
         "iStream_segment": 11,
-        "lIndex": 0,
+        "lIndex": 434,
         "nEdge": 36,
         "nVertex": 37,
         "pVertex_end": {
@@ -23,7 +23,7 @@
         "iFlag_dam": 0,
         "iStream_order": 3,
         "iStream_segment": 10,
-        "lIndex": 1,
+        "lIndex": 435,
         "nEdge": 12,
         "nVertex": 13,
         "pVertex_end": {
@@ -41,7 +41,7 @@
         "iFlag_dam": 0,
         "iStream_order": 2,
         "iStream_segment": 9,
-        "lIndex": 2,
+        "lIndex": 436,
         "nEdge": 53,
         "nVertex": 54,
         "pVertex_end": {
@@ -58,7 +58,7 @@
         "dSinuosity": 1.0,
         "iStream_order": 2,
         "iStream_segment": 8,
-        "lIndex": 3,
+        "lIndex": 437,
         "nEdge": 1,
         "nVertex": 2,
         "pVertex_end": {
@@ -76,7 +76,7 @@
         "iFlag_dam": 0,
         "iStream_order": 1,
         "iStream_segment": 7,
-        "lIndex": 4,
+        "lIndex": 438,
         "nEdge": 13,
         "nVertex": 14,
         "pVertex_end": {
@@ -94,7 +94,7 @@
         "iFlag_dam": 0,
         "iStream_order": 1,
         "iStream_segment": 6,
-        "lIndex": 5,
+        "lIndex": 439,
         "nEdge": 15,
         "nVertex": 16,
         "pVertex_end": {
@@ -111,7 +111,7 @@
         "dSinuosity": 1.0,
         "iStream_order": 1,
         "iStream_segment": 5,
-        "lIndex": 6,
+        "lIndex": 440,
         "nEdge": 1,
         "nVertex": 2,
         "pVertex_end": {
@@ -129,7 +129,7 @@
         "iFlag_dam": 0,
         "iStream_order": 2,
         "iStream_segment": 4,
-        "lIndex": 7,
+        "lIndex": 441,
         "nEdge": 13,
         "nVertex": 14,
         "pVertex_end": {
@@ -147,7 +147,7 @@
         "iFlag_dam": 0,
         "iStream_order": 1,
         "iStream_segment": 3,
-        "lIndex": 8,
+        "lIndex": 442,
         "nEdge": 26,
         "nVertex": 27,
         "pVertex_end": {
@@ -164,7 +164,7 @@
         "dSinuosity": 1.0,
         "iStream_order": 1,
         "iStream_segment": 2,
-        "lIndex": 9,
+        "lIndex": 443,
         "nEdge": 1,
         "nVertex": 2,
         "pVertex_end": {
@@ -182,7 +182,7 @@
         "iFlag_dam": 0,
         "iStream_order": 1,
         "iStream_segment": 1,
-        "lIndex": 10,
+        "lIndex": 444,
         "nEdge": 28,
         "nVertex": 29,
         "pVertex_end": {

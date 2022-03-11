@@ -10,6 +10,10 @@
     "iFlag_disconnected": 0,
     "lBasinID": 1,
     "lCellID_outlet": 152661,
+    "pVertex_outlet": {
+        "dLatitude_degree": 39.545934484148,
+        "dLongitude_degree": -76.076810427196
+    },
     "sBasinID": "001",
     "sFilename_area_of_difference": "area_of_difference.json",
     "sFilename_basin_info": "basin_info.json",
