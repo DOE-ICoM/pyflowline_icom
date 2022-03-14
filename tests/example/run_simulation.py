@@ -44,38 +44,26 @@ sWorkspace_data = realpath( sPath +  '/data/susquehanna' )
 sWorkspace_input =  str(Path(sWorkspace_data)  /  'input')
 sWorkspace_output=  str(Path(sWorkspace_data)  /  'output')
 
-if iFlag_option ==1:    
-    sFilename_configuration_in = realpath( sPath +  '/tests/configurations/template.json' )
-    
-    oPyflowline = pyflowline_generate_template_configuration_json_file(sFilename_configuration_in,\
-         sWorkspace_input, sWorkspace_output, iFlag_use_mesh_dem_in = 1,sMesh_type_in=sMesh_type, iCase_index_in = iCase_index, sDate_in = sDate)
-    
-    print(oPyflowline.tojson())
-else: 
-    if iFlag_option == 2:
-        #an example configuration file is provided with the repository, but you need to update this file based on your own case study
+
+
+#an example configuration file is provided with the repository, but you need to update this file based on your own case study
         #linux
   
         
-        if sMesh_type=='hexagon':
-            sFilename_configuration_in = realpath( sPath +  '/../configurations/pyflowline_susquehanna_hexagon.json' )
+if sMesh_type=='hexagon':
+    sFilename_configuration_in = realpath( sPath +  '/../configurations/pyflowline_susquehanna_hexagon.json' )
+else:
+    if sMesh_type=='square':
+        sFilename_configuration_in = realpath( sPath +  '/../configurations/pyflowline_susquehanna_square.json' )
+    else:
+        if sMesh_type=='latlon':
+            sFilename_configuration_in = realpath( sPath +  '/../configurations/pyflowline_susquehanna_latlon.json' )
         else:
-            if sMesh_type=='square':
-                sFilename_configuration_in = realpath( sPath +  '/../configurations/pyflowline_susquehanna_square.json' )
-            else:
-                if sMesh_type=='latlon':
-                    sFilename_configuration_in = realpath( sPath +  '/../configurations/pyflowline_susquehanna_latlon.json' )
-                else:
-                    sFilename_configuration_in = realpath( sPath +  '/../configurations/)pyflowline_susquehanna_mpas.json' )
-        
-        
-        oPyflowline = pyflowline_read_model_configuration_file(sFilename_configuration_in, \
+            sFilename_configuration_in = realpath( sPath +  '/../configurations/)pyflowline_susquehanna_mpas.json' )
+oPyflowline = pyflowline_read_model_configuration_file(sFilename_configuration_in, \
             iCase_index_in=iCase_index, dResolution_meter_in=dResolution_meter, sDate_in=sDate)
         
-
-#pyflowline can process multiple basins within one singel run
-#the total number of basin is controlled by the nOutlet variable
-#convert the raw flowline into geojson in WGS84 system        
+     
 oPyflowline.convert_flowline_to_json()
 oPyflowline.aBasin[0].dLatitude_outlet_degree=39.4620
 oPyflowline.aBasin[0].dLongitude_outlet_degree=-76.0093
