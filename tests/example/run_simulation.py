@@ -11,7 +11,7 @@ logging.warning('is the time Pyflowline simulation started.')
 
 from pyflowline.classes.pycase import flowlinecase
 from pyflowline.pyflowline_read_model_configuration_file import pyflowline_read_model_configuration_file
-from pyflowline.pyflowline_generate_template_configuration_json_file import pyflowline_generate_template_configuration_json_file
+from pyflowline.pyflowline_generate_template_configuration_file import pyflowline_generate_template_configuration_file
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--sMesh_type", help = "sMesh_type",  type = str)
@@ -21,7 +21,7 @@ parser.add_argument("--sDate", help = "sDate",  type = str)
 
 #example
 #python notebook.py --sMesh_type hexagon --iCase_index 1 --dResolution_meter 50000 --sDate 20220201
-pArgs = parser.parse_args()
+pArgs, unknownArgs = parser.parse_known_args()
 if len(sys.argv) == 1:
     sMesh_type = 'mpas'
     iCase_index = 10
@@ -38,17 +38,16 @@ else:
         print(len(sys.argv), 'Missing arguments')
         pass
 
-sPath = str( Path().resolve() )
+dataPath = str(Path(__file__).parents[2]) # data is located two dir's up
 iFlag_option = 1
-sWorkspace_data = realpath( sPath +  '/data/susquehanna' )
+sWorkspace_data = realpath( dataPath +  '/data/susquehanna' )
 sWorkspace_input =  str(Path(sWorkspace_data)  /  'input')
 sWorkspace_output=  str(Path(sWorkspace_data)  /  'output')
-
-
 
 #an example configuration file is provided with the repository, but you need to update this file based on your own case study
         #linux
   
+sPath = str( Path().resolve() )  # mgc moved this here and defined dataPath above
         
 if sMesh_type=='hexagon':
     sFilename_configuration_in = realpath( sPath +  '/../configurations/pyflowline_susquehanna_hexagon.json' )
@@ -59,10 +58,9 @@ else:
         if sMesh_type=='latlon':
             sFilename_configuration_in = realpath( sPath +  '/../configurations/pyflowline_susquehanna_latlon.json' )
         else:
-            sFilename_configuration_in = realpath( sPath +  '/../configurations/)pyflowline_susquehanna_mpas.json' )
+            sFilename_configuration_in = realpath( sPath +  '/../configurations/pyflowline_susquehanna_mpas.json' )
 oPyflowline = pyflowline_read_model_configuration_file(sFilename_configuration_in, \
             iCase_index_in=iCase_index, dResolution_meter_in=dResolution_meter, sDate_in=sDate)
-        
      
 oPyflowline.convert_flowline_to_json()
 oPyflowline.aBasin[0].dLatitude_outlet_degree=39.4620
@@ -89,3 +87,11 @@ print('Finished')
 
 logging.basicConfig(format='%(asctime)s %(message)s')
 logging.warning('is the time Pyflowline simulation finished.')
+
+# check these if problems with paths come up:
+# oPyflowline.sFilename_model_configuration
+# oPyflowline.sFilename_basins
+# oPyflowline.sFilename_mesh_info
+# oPyflowline.sFilename_mesh
+# oPyflowline.sFilename_dem
+
