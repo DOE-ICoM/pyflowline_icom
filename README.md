@@ -6,12 +6,11 @@ The Pyflowline model is a Python package to generate conceptual river networks f
 
 
 # Installation
-The full deployment of PyFlowline is still under development. It can be installed through either Pythin PyPI or the Conda system, which is recommended because of the dependency packages.
+The full deployment of PyFlowline is still under development. It can be installed through either Python PyPI or the Conda system, which is recommended because of the dependency packages.
 
 As of right now, you can install PyFlowline using the following steps:
 
-1. install the dependency packages through Conda 
-
+1. install the dependency packages through Conda  
 
 2. install PyFlowline through the PyPI:
     pip3 install pyflowline
@@ -23,8 +22,7 @@ As of right now, you can install PyFlowline using the following steps:
 
 
 # Usage
-We use the notebook.py example file under the tests/example/ directory to showcase the model workflow.
-An additional Python package is required for the visualization purpose. Also see requirements.txt.
+We use the notebooks/pyflowline.ipynb and the tests/example/notebook.py example files to showcase the model workflow. Both have been tested on macOS and Linux. An additional Python package is required for the visualization purpose, or a preferred visualization software (e.g. QGIS). Also see requirements.txt.
 
 The follow steps are recommended:  
 
@@ -48,12 +46,14 @@ The follow steps are recommended:
 
 6. Clone this repository and set this environment as the workspace environment
 
-7. Navigate to the notebook and run it in your preferred Python IDE.
+7. Navigate to tests/configurations/ and edit the paths to match your local directory structure.
 
-8. Visulize the results with QGIS
+8. Navigate to the notebook and run it in your preferred Python IDE.
+
+9. Visulize the results with QGIS
 
 
-If using pyenv-virtualenv rather than Conda, the following steps are recommended (assumes a working installation of pyenv-virtualenvwrapper):  
+If using pyenv-virtualenv rather than Conda, the following steps are recommended (assumes a working installation of pyenv-virtualenvwrapper). After step 6, follow the instructions above.   
 
 1. cd to your preferred directory and clone this repo.
 
@@ -69,7 +69,7 @@ If using pyenv-virtualenv rather than Conda, the following steps are recommended
 	
 	`pip3 install pyflowline`
 
-5. Make sure the dependencies listed above (numpy, shapely, netcdf4, gdal) are installed:
+5. Make sure the dependencies listed above (numpy, shapely, netcdf4, gdal) are installed (also see requirements.txt):
 
     `lssitepackages`
 	
