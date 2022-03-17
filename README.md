@@ -14,40 +14,35 @@ As of right now, you can install PyFlowline using the following steps:
 
 
 2. install PyFlowline through the PyPI:
-    pip install pyflowline
+    pip3 install pyflowline
 
 3. (Optional) Install the visualization package through Conda:
     conda install -c conda-forge
 
-4. (Optional) Install the Python JupterNote to run this tutorial.
+4. (Optional) Install the Python JupyterNote to run this tutorial.
 
 
 # Usage
-We use the notebook.py example file under the the notebook directory to showcase the model workflow.
-An additional Python package is required for the visualization purpose. 
+We use the notebook.py example file under the tests/example/ directory to showcase the model workflow.
+An additional Python package is required for the visualization purpose. Also see requirements.txt.
 
-The follow steps are recommended:
+The follow steps are recommended:  
+
 1. Open the terminal or use your preferred Conda application to create a new Conda environment:
 
-    conda create --name pyflowline python=3.8
+    `conda create --name pyflowline python=3.8`
 
 2. Activate the newly crated conda environment
 
-    conda activate pyflowline
+    `conda activate pyflowline`
 
-3. Install dependency packages using conda
+3. Install dependency packages using conda  
 
-    * conda install -c conda-forge numpy
+    `conda install -c conda-forge numpy shapely netCDF4 gdal`
 
-    * conda install -c conda-forge shapely
+4. Install PyFlowline  
 
-    * conda install -c conda-forge netCDF4
-
-    * conda install -c conda-forge gdal
-
-4. Install PyFlowline
-
-    pip install pyflowline
+    `pip3 install pyflowline`
 
 5. Install and setup the Python Jupyter Notebook
 
@@ -58,7 +53,25 @@ The follow steps are recommended:
 8. Visulize the results with QGIS
 
 
+If using pyenv-virtualenv rather than Conda, the following steps are recommended (assumes a working installation of pyenv-virtualenvwrapper):  
 
+1. cd to your preferred directory and clone this repo.
 
-    
+2. Open the terminal or use your preferred application to create a new virtualenv:    
 
+    `mkvirtualenv -p python3.8 -a /path/to/local/copy/of/this/repo pyflowline`
+	
+3. activate the environment if it isn't automatically:
+	
+	`workon pyflowline`
+	
+4. Install pyflowline:
+	
+	`pip3 install pyflowline`
+
+5. Make sure the dependencies listed above (numpy, shapely, netcdf4, gdal) are installed:
+
+    `lssitepackages`
+	
+6. Open notebooks/pyflowline.ipynb in your preferred IDE
+	- Note: If running in vscode, ensure the kernel is set to your activated environment and install ipykernel when prompted
