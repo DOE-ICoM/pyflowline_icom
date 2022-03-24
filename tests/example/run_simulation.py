@@ -1,4 +1,4 @@
-import sys
+import os, sys
 from pathlib import Path
 from os.path import realpath
 import argparse
@@ -24,7 +24,7 @@ parser.add_argument("--sDate", help = "sDate",  type = str)
 pArgs, unknownArgs = parser.parse_known_args()
 if len(sys.argv) == 1:
     sMesh_type = 'mpas'
-    iCase_index = 10
+    iCase_index = 13
     dResolution_meter=5000
     sDate='20220308'
 else:
@@ -45,37 +45,40 @@ sWorkspace_input =  str(Path(sWorkspace_data)  /  'input')
 sWorkspace_output=  str(Path(sWorkspace_data)  /  'output')
 
 #an example configuration file is provided with the repository, but you need to update this file based on your own case study
-        #linux
-  
-sPath = str( Path().resolve() )  # mgc moved this here and defined dataPath above
+
         
 if sMesh_type=='hexagon':
-    sFilename_configuration_in = realpath( sPath +  '/../configurations/pyflowline_susquehanna_hexagon.json' )
+    sFilename_configuration_in = realpath( sPath +  '/tests/configurations/pyflowline_susquehanna_hexagon.json' )
 else:
     if sMesh_type=='square':
-        sFilename_configuration_in = realpath( sPath +  '/../configurations/pyflowline_susquehanna_square.json' )
+        sFilename_configuration_in = realpath( sPath +  '/tests/configurations/pyflowline_susquehanna_square.json' )
     else:
         if sMesh_type=='latlon':
-            sFilename_configuration_in = realpath( sPath +  '/../configurations/pyflowline_susquehanna_latlon.json' )
+            sFilename_configuration_in = realpath( sPath +  '/tests/configurations/pyflowline_susquehanna_latlon.json' )
         else:
-            sFilename_configuration_in = realpath( sPath +  '/../configurations/pyflowline_susquehanna_mpas.json' )
+            sFilename_configuration_in = realpath( sPath +  '/tests/configurations/pyflowline_susquehanna_mpas.json' )
+
+if os.path.isfile(sFilename_configuration_in):
+    pass
+else:
+    print('This shapefile does not exist: ', sFilename_configuration_in )
+    exit()
+
+
 oPyflowline = pyflowline_read_model_configuration_file(sFilename_configuration_in, \
             iCase_index_in=iCase_index, dResolution_meter_in=dResolution_meter, sDate_in=sDate)
      
 oPyflowline.convert_flowline_to_json()
 oPyflowline.aBasin[0].dLatitude_outlet_degree=39.4620
 oPyflowline.aBasin[0].dLongitude_outlet_degree=-76.0093
-
 oPyflowline.flowline_simplification()
-
 oPyflowline.dLongitude_left= -79
 oPyflowline.dLongitude_right= -74.5
 oPyflowline.dLatitude_bot= 39.20
 oPyflowline.dLatitude_top= 42.8
+aCell = oPyflowline.mesh_generation()
 
-oPyflowline.mesh_generation()
-
-oPyflowline.reconstruct_topological_relationship()
+oPyflowline.reconstruct_topological_relationship(aCell)
 
 oPyflowline.analyze()
 
