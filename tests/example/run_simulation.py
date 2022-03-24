@@ -21,7 +21,7 @@ parser.add_argument("--sDate", help = "sDate",  type = str)
 
 #example
 #python notebook.py --sMesh_type hexagon --iCase_index 1 --dResolution_meter 50000 --sDate 20220201
-pArgs = parser.parse_args()
+pArgs, unknownArgs = parser.parse_known_args()
 if len(sys.argv) == 1:
     sMesh_type = 'mpas'
     iCase_index = 13
@@ -38,14 +38,14 @@ else:
         print(len(sys.argv), 'Missing arguments')
         pass
 
-sPath = str( Path().resolve() )
+dataPath = str(Path(__file__).parents[2]) # data is located two dir's up
 iFlag_option = 1
-sWorkspace_data = realpath( sPath +  '/data/susquehanna' )
+sWorkspace_data = realpath( dataPath +  '/data/susquehanna' )
 sWorkspace_input =  str(Path(sWorkspace_data)  /  'input')
 sWorkspace_output=  str(Path(sWorkspace_data)  /  'output')
 
 #an example configuration file is provided with the repository, but you need to update this file based on your own case study
- 
+
         
 if sMesh_type=='hexagon':
     sFilename_configuration_in = realpath( sPath +  '/tests/configurations/pyflowline_susquehanna_hexagon.json' )
@@ -64,9 +64,9 @@ else:
     print('This shapefile does not exist: ', sFilename_configuration_in )
     exit()
 
+
 oPyflowline = pyflowline_read_model_configuration_file(sFilename_configuration_in, \
             iCase_index_in=iCase_index, dResolution_meter_in=dResolution_meter, sDate_in=sDate)
-        
      
 oPyflowline.convert_flowline_to_json()
 oPyflowline.aBasin[0].dLatitude_outlet_degree=39.4620
@@ -90,3 +90,11 @@ print('Finished')
 
 logging.basicConfig(format='%(asctime)s %(message)s')
 logging.warning('is the time Pyflowline simulation finished.')
+
+# check these if problems with paths come up:
+# oPyflowline.sFilename_model_configuration
+# oPyflowline.sFilename_basins
+# oPyflowline.sFilename_mesh_info
+# oPyflowline.sFilename_mesh
+# oPyflowline.sFilename_dem
+

@@ -6,59 +6,72 @@ The Pyflowline model is a Python package to generate conceptual river networks f
 
 
 # Installation
-The full deployment of PyFlowline is still under development. It can be installed through either Pythin PyPI or the Conda system, which is recommended because of the dependency packages.
+The full deployment of PyFlowline is still under development. It can be installed through either Python PyPI or the Conda system, which is recommended because of the dependency packages.
 
 As of right now, you can install PyFlowline using the following steps:
 
-1. install the dependency packages through Conda 
-
+1. install the dependency packages through Conda  
 
 2. install PyFlowline through the PyPI:
-    pip install pyflowline
+    pip3 install pyflowline
 
 3. (Optional) Install the visualization package through Conda:
     conda install -c conda-forge
 
-4. (Optional) Install the Python JupterNote to run this tutorial.
+4. (Optional) Install the Python JupyterNote to run this tutorial.
 
 
 # Usage
-We use the notebook.py example file under the the notebook directory to showcase the model workflow.
-An additional Python package is required for the visualization purpose. 
+We use the notebooks/pyflowline.ipynb and the tests/example/notebook.py example files to showcase the model workflow. Both have been tested on macOS and Linux. An additional Python package is required for the visualization purpose, or a preferred visualization software (e.g. QGIS). Also see requirements.txt.
 
-The follow steps are recommended:
+The follow steps are recommended:  
+
 1. Open the terminal or use your preferred Conda application to create a new Conda environment:
 
-    conda create --name pyflowline python=3.8
+    `conda create --name pyflowline python=3.8`
 
 2. Activate the newly crated conda environment
 
-    conda activate pyflowline
+    `conda activate pyflowline`
 
-3. Install dependency packages using conda
+3. Install dependency packages using conda  
 
-    * conda install -c conda-forge numpy
+    `conda install -c conda-forge numpy shapely netCDF4 gdal`
 
-    * conda install -c conda-forge shapely
+4. Install PyFlowline  
 
-    * conda install -c conda-forge netCDF4
-
-    * conda install -c conda-forge gdal
-
-4. Install PyFlowline
-
-    pip install pyflowline
+    `pip3 install pyflowline`
 
 5. Install and setup the Python Jupyter Notebook
 
 6. Clone this repository and set this environment as the workspace environment
 
-7. Navigate to the notebook and run it in your preferred Python IDE.
+7. Navigate to tests/configurations/ and edit the paths to match your local directory structure.
 
-8. Visulize the results with QGIS
+8. Navigate to the notebook and run it in your preferred Python IDE.
+
+9. Visulize the results with QGIS
 
 
+If using pyenv-virtualenv rather than Conda, the following steps are recommended (assumes a working installation of pyenv-virtualenvwrapper). After step 6, follow the instructions above.   
 
+1. cd to your preferred directory and clone this repo.
 
-    
+2. Open the terminal or use your preferred application to create a new virtualenv:    
 
+    `mkvirtualenv -p python3.8 -a /path/to/local/copy/of/this/repo pyflowline`
+	
+3. activate the environment if it isn't automatically:
+	
+	`workon pyflowline`
+	
+4. Install pyflowline:
+	
+	`pip3 install pyflowline`
+
+5. Make sure the dependencies listed above (numpy, shapely, netcdf4, gdal) are installed (also see requirements.txt):
+
+    `lssitepackages`
+	
+6. Open notebooks/pyflowline.ipynb in your preferred IDE
+	- Note: If running in vscode, ensure the kernel is set to your activated environment and install ipykernel when prompted
