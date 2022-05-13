@@ -23,10 +23,10 @@ parser.add_argument("--sDate", help = "sDate",  type = str)
 #python notebook.py --sMesh_type hexagon --iCase_index 1 --dResolution_meter 50000 --sDate 20220201
 pArgs, unknownArgs = parser.parse_known_args()
 if len(sys.argv) == 1:
-    sMesh_type = 'mpas'
-    iCase_index = 13
-    dResolution_meter=5000
-    sDate='20220308'
+    sMesh_type = 'latlon'
+    iCase_index = 1
+    dResolution_meter=10000
+    sDate='20220504'
 else:
     if len(sys.argv)> 1:
         sMesh_type = pArgs.sMesh_type
@@ -71,7 +71,7 @@ oPyflowline = pyflowline_read_model_configuration_file(sFilename_configuration_i
 oPyflowline.convert_flowline_to_json()
 oPyflowline.aBasin[0].dLatitude_outlet_degree=39.4620
 oPyflowline.aBasin[0].dLongitude_outlet_degree=-76.0093
-oPyflowline.flowline_simplification()
+#oPyflowline.flowline_simplification()
 oPyflowline.dLongitude_left= -79
 oPyflowline.dLongitude_right= -74.5
 oPyflowline.dLatitude_bot= 39.20
