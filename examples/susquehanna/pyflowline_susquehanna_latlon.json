@@ -36,5 +36,5 @@
     "sFilename_spatial_reference": "/qfs/people/liao313/workspace/python/pyhexwatershed_icom/data/susquehanna/input/boundary_proj_buff.shp",
     "sFilename_dem": "/qfs/people/liao313/data/hexwatershed/susquehanna/raster/dem/dem1.tif",   
     "sFilename_mesh_netcdf": "/qfs/people/liao313/workspace/python/jigsaw/icom-mesh/mesh/delaware_60_30_5_2_w_boundary/out/invert_mesh.nc",
-    "sFilename_basins": "/qfs/people/liao313/workspace/python/pyflowline_icom/example/susquehanna/pyflowline_susquehanna_basins.json"
+    "sFilename_basins": "/qfs/people/liao313/workspace/python/pyflowline_icom/examples/susquehanna/pyflowline_susquehanna_basins.json"
 }
