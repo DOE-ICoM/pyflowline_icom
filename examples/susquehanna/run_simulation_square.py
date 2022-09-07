@@ -3,41 +3,49 @@ from pathlib import Path
 from os.path import realpath
 
 from pyflowline.pyflowline_read_model_configuration_file import pyflowline_read_model_configuration_file
-
-
-
-#set up input
+#===================================
+#set up workspace path
+#===================================
+sPath_config = str( Path().resolve() )   
 sPath_data = str(Path(__file__).parents[2]) # data is located two dir's up
 sWorkspace_data = realpath( sPath_data +  '/data/susquehanna' )
 sWorkspace_input =  str(Path(sWorkspace_data)  /  'input')
-
-#setup output and HPC job 
-sSlurm = 'short'
 sWorkspace_output = '/compyfs/liao313/04model/pyflowline/susquehanna'
-sFilename = sWorkspace_output + '/' + 'square.bash'
-ofs = open(sFilename, 'w')
-sLine  = '#!/bin/bash' + '\n'
-ofs.write(sLine)
 
-#set up configuration file
-#you may need to update this file based on your own case study
-sPath = str( Path().resolve() )    
-sFilename_configuration_in = realpath( sPath +  '/examples/susquehanna/pyflowline_susquehanna_square.json' )
+
+#===================================
+#you need to update this file based on your own case study
+#=================================== 
+sFilename_configuration_in = realpath( sPath_config +  '/examples/susquehanna/pyflowline_susquehanna_square.json' )
 if os.path.isfile(sFilename_configuration_in):
     pass
 else:
     print('This configuration does not exist: ', sFilename_configuration_in )
 
-
-#set up cases information
-iFlag_visualization=0
+#===================================
+#setup case information
+#===================================
 iCase_index = 1
+iFlag_visualization=0
 sDate='20220905'
 sMesh = 'square'
 aResolution_meter = [5000, 10000, 50000]
 nResolution = len(aResolution_meter)
 
+
+#===================================
+#setup output and HPC job 
+#===================================
+sSlurm = 'short'
+sFilename = sWorkspace_output + '/' + sMesh + '.bash'
+ofs = open(sFilename, 'w')
+sLine  = '#!/bin/bash' + '\n'
+ofs.write(sLine)
+
+
+#===================================
 #visualization spatial extent
+#===================================
 aExtent_full = [-78.5,-75.5, 39.2,42.5]
 aExtent_meander = [-76.5,-76.2, 41.6,41.9] #meander
 aExtent_braided = [-77.3,-76.5, 40.2,41.0] #braided
