@@ -7,16 +7,15 @@ from pyflowline.pyflowline_read_model_configuration_file import pyflowline_read_
 #===================================
 #set up workspace path
 #===================================
-sPath_config = str( Path().resolve() )   
-sPath_data = str(Path(__file__).parents[2]) # data is located two dir's up
-sWorkspace_data = realpath( sPath_data +  '/data/susquehanna' )
-sWorkspace_input =  str(Path(sWorkspace_data)  /  'input')
+sPath_parent = str(Path(__file__).parents[2]) # data is located two dir's up
+sPath_data = realpath( sPath_parent +  '/data/susquehanna' )
+sWorkspace_input =  str(Path(sPath_data)  /  'input')
 sWorkspace_output = '/compyfs/liao313/04model/pyflowline/susquehanna'
 
 #===================================
 #you need to update this file based on your own case study
 #=================================== 
-sFilename_configuration_in = realpath( sPath_config +  '/examples/susquehanna/pyflowline_susquehanna_mpas.json' )
+sFilename_configuration_in = realpath( sPath_parent +  '/examples/susquehanna/pyflowline_susquehanna_mpas.json' )
 if os.path.isfile(sFilename_configuration_in):
     pass
 else:
@@ -34,7 +33,7 @@ sDate='20220630'
 #setup output and HPC job 
 #===================================
 sSlurm = 'short'
-sFilename = sWorkspace_output + '/' + sMesh + '.bash'
+sFilename = sWorkspace_output + '/' + sMesh_type + '.bash'
 ofs = open(sFilename, 'w')
 sLine  = '#!/bin/bash' + '\n'
 ofs.write(sLine)
