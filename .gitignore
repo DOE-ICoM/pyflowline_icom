@@ -128,4 +128,17 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Data
 *.nc
+
+# Mac stuff
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# External disks
+.Spotlight-*
+.Trashes
