@@ -1,9 +1,9 @@
 {
-    "sFilename_model_configuration": "/Users/coop558/myprojects/temp/pyflowline_icom/tests/configurations/hexwatershed_susquehanna_mpas.json",
-    "sWorkspace_data": "/Users/coop558/myprojects/temp/pyflowline_icom/data",    
-    "sWorkspace_output": "/Users/coop558/myprojects/temp/pyflowline_icom/data/susquehanna",
-    "sWorkspace_project": "/Users/coop558/myprojects/temp/pyflowline_icom",
-    "sWorkspace_bin": "/Users/coop558/.myvirtualenvs/pyflowline_temp/lib/python3.8/site-packages",
+    "sFilename_model_configuration": "/Users/coop558/myprojects/pyflowline_icom/tests/configurations/hexwatershed_susquehanna_mpas.json",
+    "sWorkspace_data": "/Users/coop558/myprojects/pyflowline_icom/data",    
+    "sWorkspace_output": "/Users/coop558/myprojects/pyflowline_icom/data/susquehanna",
+    "sWorkspace_project": "/Users/coop558/myprojects/pyflowline_icom",
+    "sWorkspace_bin": "/Users/coop558/.myvirtualenvs/pyflowline/lib/python3.8/site-packages",
     "sRegion": "susquehanna",
     "sModel": "pyflowline",
     "sJob": "hex",   
@@ -27,8 +27,8 @@
     "dResolution_meter": 5000,    
     "sDate": "20220110",        
     "sMesh_type": "mpas",       
-    "sFilename_spatial_reference": "/Users/coop558/myprojects/temp/pyflowline_icom/data/susquehanna/input/boundary_proj.shp",
+    "sFilename_spatial_reference": "/Users/coop558/myprojects/pyflowline_icom/data/susquehanna/input/boundary_proj.shp",
     "sFilename_dem": "/qfs/people/liao313/data/hexwatershed/susquehanna/raster/dem/dem_ext.tif",     
-    "sFilename_mesh_netcdf": "/Users/coop558/myprojects/temp/pyflowline_icom/data/susquehanna/input/lnd_cull_mesh.nc",    
-    "sFilename_basins": "/Users/coop558/myprojects/temp/pyflowline_icom/tests/configurations/pyflowline_susquehanna_basins.json"
+    "sFilename_mesh_netcdf": "/Users/coop558/myprojects/pyflowline_icom/data/susquehanna/input/lnd_cull_mesh.nc",    
+    "sFilename_basins": "/Users/coop558/myprojects/pyflowline_icom/tests/configurations/pyflowline_susquehanna_basins.json"
 }
